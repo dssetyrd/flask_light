@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import numpy as np
 import matplotlib.pyplot as plt
+import opencv-python as cv2
 import cv2
 
 

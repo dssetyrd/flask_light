@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request
 import numpy as np
 import matplotlib.pyplot as plt
-import opencv-python as cv2
-import cv2
+import cv2 as cv
 
 
 MAX_FILE_SIZE = 1024 * 1024*10 + 1
@@ -17,8 +16,8 @@ def index():
         file = request.files["file"]
         filestr = file.read()
         npimg = np.fromstring(filestr, np.uint8)
-        img = cv2.imdecode(npimg, cv2.IMREAD_UNCHANGED)
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = cv.imdecode(npimg, cv.IMREAD_UNCHANGED)
+        img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
         plt.imsave("./templates/new.jpg",img)
         #cv2.imwrite ("new.jpg",cv2.cvtColor(z, cv2.COLOR_BGR2RGB))
         if bool(file.filename):

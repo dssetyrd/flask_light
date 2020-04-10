@@ -1,5 +1,3 @@
 flask
-setuptools
-importlib
-opencv-python==4.1.1.26
+opencv-python
 matplotlib
